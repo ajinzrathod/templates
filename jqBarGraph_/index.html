@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>jqBarGraph demo page</title>
+	<!--script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.2.3/jquery.min.js"></script>
+	<script src="jqBarGraph.js"></script>
+
+	<style>
+		.graph {
+			width: auto;
+			height: 250px;
+		}
+	</style>
+</head>
+<body>
+	<div id="simpleGraph"></div>
+<script>
+
+graphByMonth = new Array(
+		[100,'Jan'],
+		[500,'Feb'],
+		[200,'Mar'],
+		[50,'Apr'],
+		[300,'May'],
+	);
+
+$("#simpleGraph").jqBarGraph({
+	data: graphByMonth,
+	width: 350,
+	colors: ['#ff0000','#25D366', '#ff0000','#ff0000', '#ff0000'],
+	// colors: ['#122A47','#1B3E69'],
+	color: '#1A2944',
+	barSpace: 5,
+	title: '<h3>Number of visitors per month<br /><small>simple bar graph</small></h3>',
+	valueStyle: function (val) {
+		// return val + ',00';
+		return val + '';
+	}
+});
+
+</script>
+
+
+</body>
+</html>
